@@ -1,9 +1,11 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const compression = require("compression");
-const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
+import express      from "express";
+import path         from "path";
+import cookieParser from "cookie-parser";
+import bodyParser   from "body-parser";
+import cors         from "cors";
+import compression  from "compression";
+import awsServerlessExpressMiddleware from "aws-serverless-express/middleware";
+
 const app = express();
 
 // express configuration
@@ -21,7 +23,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV == 'dev') {
 }
 
 // controllers
-const appController = require(`${__dirname}/controllers/application-controller.js`);
+import appController from "./controllers/application-controller.js";
 app.get("/", appController.home);
 
-module.exports = app;
+export default app;
