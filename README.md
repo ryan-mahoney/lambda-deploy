@@ -8,7 +8,6 @@
 - easy to deploy
 - autoscale based on load
 - pay only for utilization
-- accessible via HTTPS (WIP)
 
 ---
 
@@ -101,3 +100,15 @@ Subsequently, update your remote lambda function with code changes:
 ```
 ./deploy.sh update
 ```
+
+---
+
+#### Connecting to a Custom Domain (notes)
+
+- you can register a domain with Amazon's Route 53
+- you can create a free SSL certificate Amazon's Certificate Manager
+- deploying will create a Lambda function and an API Gateway URL that always contains the tag, for example: `/latest`
+- you can create a Cloudfront instance that sets your API gateway URL + tag to map to `/`
+- when creating the Cloudfront instance, make sure Cloudfront always requests from API Gateway via HTTPS
+- after your Cloudfront distribution is created, you can create an A record "alias" zone to your Cloudfron distribution
+- now your site is available via your custom domain over SSL!
