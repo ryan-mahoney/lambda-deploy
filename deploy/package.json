@@ -1,0 +1,16 @@
+{
+  "name": "lambda-deploy-build",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lambda.js",
+  "scripts": {
+    "create": "claudia create --region us-east-1 --deploy-proxy-api --handler lambda.handler --profile claudia",
+    "update": "claudia update --profile claudia"
+  },
+  "devDependencies": {
+    "claudia": "^2.14.3"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.0.2"
+  }
+}

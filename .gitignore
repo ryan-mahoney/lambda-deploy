@@ -1,0 +1,9 @@
+/node_modules
+/app/node_modules
+/app/public/build
+/deploy/lambda.js
+/deploy/claudia.json
+/deploy/static
+/deploy/node_modules
+/config/db.json
+/npm-debug.log
